@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>Переключатели, флажки и списки</TITLE>
+</HEAD>
+
+<BODY>
+
+<FORM>
+
+
+<H2>Группа переключателей</H2>
+
+<BR>Фамилия:
+<BR><INPUT TYPE='text' VALUE='Иванов'>
+
+<BR><INPUT TYPE='radio' NAME='color'>Белый
+<BR><INPUT TYPE='radio' NAME='color'>Красный
+<BR><INPUT TYPE='radio' NAME='color'>Желтый
+<BR><INPUT TYPE='radio' NAME='color'>Зеленый
+
+<H2>Группа флажков</H2>
+
+<BR><INPUT TYPE='checkbox' NAME='fruit'>Груша
+<BR><INPUT TYPE='checkbox' NAME='fruit'>Персик
+<BR><INPUT TYPE='checkbox' NAME='fruit'>Яблоко
+
+
+<BR><BR>
+<INPUT TYPE='button' VALUE='Пишите мне'
+ONCLICK="window.open('https://vk.ru/wladimir_zh');">
+
+<BR><BR>
+<INPUT TYPE='button' VALUE='Посмотрите мои фотографии'
+ONCLICK="window.open('https://vk.ru/club444705');">
+
+
+
+<H2>Раскрывающийся и обычный список</H2>
+
+<TABLE>
+<CAPTION>
+<FONT SIZE='5'>Выберите страну:</FONT>
+</CAPTION>
+
+<TR>
+
+<TD VALIGN='top'>
+
+
+<SELECT NAME='COUNTRY' SIZE='1'>
+<OPTION VALUE='Беларусь'>Беларусь
+<OPTION VALUE='Казахстан'>Казахстан
+<OPTION VALUE='Россия'>Россия
+<OPTION VALUE='Украина'>Украина
+</SELECT>
+
+</TD>
+
+<TD VALIGN='top'>
+
+<SELECT NAME='COUNTRIES' SIZE='3' MULTIPLE>
+<OPTION VALUE='Беларусь'>Беларусь
+<OPTION VALUE='Казахстан'>Казахстан
+<OPTION VALUE='Россия' SELECTED>Россия
+<OPTION VALUE='Украина'>Украина
+</SELECT>
+
+</TD>
+
+</TR>
+</TABLE>
+
+</FORM>
+
+</BODY>
+</HTML>
