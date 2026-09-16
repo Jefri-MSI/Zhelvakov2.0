@@ -1,17 +1,25 @@
 <HTML>
 <HEAD>
 <TITLE>Переключатели, флажки и списки</TITLE>
+
+<SCRIPT>
+function showSurname() {
+    var surname = document.getElementById("surname").value;
+    alert("Ваша фамилия: " + surname);
+}
+</SCRIPT>
+
 </HEAD>
 
 <BODY>
 
 <FORM>
 
-
 <H2>Группа переключателей</H2>
 
 <BR>Фамилия:
-<BR><INPUT TYPE='text' VALUE='Иванов'>
+<BR><INPUT TYPE='text' VALUE='Иванов' ID='surname'>
+<INPUT TYPE='button' VALUE='Вывести фамилию' ONCLICK="showSurname();">
 
 <BR><INPUT TYPE='radio' NAME='color'>Белый
 <BR><INPUT TYPE='radio' NAME='color'>Красный
@@ -24,7 +32,6 @@
 <BR><INPUT TYPE='checkbox' NAME='fruit'>Персик
 <BR><INPUT TYPE='checkbox' NAME='fruit'>Яблоко
 
-
 <BR><BR>
 <INPUT TYPE='button' VALUE='Пишите мне'
 ONCLICK="window.open('https://vk.ru/wladimir_zh');">
@@ -32,8 +39,6 @@ ONCLICK="window.open('https://vk.ru/wladimir_zh');">
 <BR><BR>
 <INPUT TYPE='button' VALUE='Посмотрите мои фотографии'
 ONCLICK="window.open('https://vk.ru/club444705');">
-
-
 
 <H2>Раскрывающийся и обычный список</H2>
 
@@ -45,7 +50,6 @@ ONCLICK="window.open('https://vk.ru/club444705');">
 <TR>
 
 <TD VALIGN='top'>
-
 
 <SELECT NAME='COUNTRY' SIZE='1'>
 <OPTION VALUE='Беларусь'>Беларусь
