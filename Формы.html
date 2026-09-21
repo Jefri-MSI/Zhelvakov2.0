@@ -1,10 +1,49 @@
 <HTML>
-<HEAD>
-<TITLE>Переключатели, флажки и списки</TITLE>
-<A HREF="index.html">Главная</A>
+<A HREF="index.html">Главгая</A>
 &nbsp;&nbsp;&nbsp;
 <A HREF="Таблицы.html">Таблицы</A>
+<HEAD>
+
+<TITLE>Переключатели, флажки и списки</TITLE>
+
 <SCRIPT>
+
+function showSurname()
+{
+    var surname = document.getElementById("surname").value;
+    alert("Ваша фамилия: " + surname);
+}
+
+function showForm()
+{
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+    var city = document.getElementById("city").value;
+
+    var hobbies = "";
+
+    if (document.getElementById("hobby1").checked)
+    {
+        hobbies = hobbies + "Создавать БД<BR>";
+    }
+
+    if (document.getElementById("hobby2").checked)
+    {
+        hobbies = hobbies + "Тонироваться<BR>";
+    }
+
+    if (document.getElementById("hobby3").checked)
+    {
+        hobbies = hobbies + "Ездить в пгт Чукрышкино<BR>";
+    }
+
+    document.getElementById("result").innerHTML =
+    "Имя: " + name + "<BR>" +
+    "Возраст: " + age + "<BR>" +
+    "Город: " + city + "<BR>" +
+    "Увлечения:<BR>" + hobbies;
+}
+
 </SCRIPT>
 
 </HEAD>
@@ -16,63 +55,115 @@
 <H2>Группа переключателей</H2>
 
 <BR>Фамилия:
-<BR><INPUT TYPE='text' VALUE='Иванов' ID='surname'>
-<INPUT TYPE='button' VALUE='Вывести фамилию' ONCLICK="showSurname();">
+<BR><INPUT TYPE="text" VALUE="Иванов" ID="surname">
 
-<BR><INPUT TYPE='radio' NAME='color'>Белый
-<BR><INPUT TYPE='radio' NAME='color'>Красный
-<BR><INPUT TYPE='radio' NAME='color'>Желтый
-<BR><INPUT TYPE='radio' NAME='color'>Зеленый
+<INPUT TYPE="button" VALUE="Вывести фамилию" ONCLICK="showSurname();">
+
+<BR><INPUT TYPE="radio" NAME="color">Белый
+<BR><INPUT TYPE="radio" NAME="color">Красный
+<BR><INPUT TYPE="radio" NAME="color">Желтый
+<BR><INPUT TYPE="radio" NAME="color">Зеленый>
+
 
 <H2>Группа флажков</H2>
 
-<BR><INPUT TYPE='checkbox' NAME='fruit'>Груша
-<BR><INPUT TYPE='checkbox' NAME='fruit'>Персик
-<BR><INPUT TYPE='checkbox' NAME='fruit'>Яблоко
+<BR><INPUT TYPE="checkbox" NAME="fruit">Груша
+<BR><INPUT TYPE="checkbox" NAME="fruit">Персик
+<BR><INPUT TYPE="checkbox" NAME="fruit">Яблоко
+
 
 <BR><BR>
-<INPUT TYPE='button' VALUE='Пишите мне'
+
+<INPUT TYPE="button" VALUE="Пишите мне"
 ONCLICK="window.open('https://vk.ru/wladimir_zh');">
 
 <BR><BR>
-<INPUT TYPE='button' VALUE='Посмотрите мои фотографии'
+
+<INPUT TYPE="button" VALUE="Посмотрите мои фотографии"
 ONCLICK="window.open('https://vk.ru/club444705');">
+
 
 <H2>Раскрывающийся и обычный список</H2>
 
 <TABLE>
+
 <CAPTION>
-<FONT SIZE='5'>Выберите страну:</FONT>
+<FONT SIZE="5">Выберите страну:</FONT>
 </CAPTION>
 
 <TR>
 
-<TD VALIGN='top'>
+<TD>
 
-<SELECT NAME='COUNTRY' SIZE='1'>
-<OPTION VALUE='Беларусь'>Беларусь
-<OPTION VALUE='Казахстан'>Казахстан
-<OPTION VALUE='Россия'>Россия
-<OPTION VALUE='Украина'>Украина
+<SELECT NAME="COUNTRY">
+
+<OPTION>Беларусь
+<OPTION>Казахстан
+<OPTION>Россия
+<OPTION>Украина
+
 </SELECT>
 
 </TD>
 
-<TD VALIGN='top'>
+<TD>
 
-<SELECT NAME='COUNTRIES' SIZE='3' MULTIPLE>
-<OPTION VALUE='Беларусь'>Беларусь
-<OPTION VALUE='Казахстан'>Казахстан
-<OPTION VALUE='Россия' SELECTED>Россия
-<OPTION VALUE='Украина'>Украина
+<SELECT NAME="COUNTRIES" SIZE="3" MULTIPLE>
+
+<OPTION>Беларусь
+<OPTION>Казахстан
+<OPTION SELECTED>Россия
+<OPTION>Украина
+
 </SELECT>
 
 </TD>
 
 </TR>
+
 </TABLE>
+
+
+<BR><HR>
+
+<H2>Анкета</H2>
+
+<BR>Имя:
+<BR><INPUT TYPE="text" ID="name">
+
+<BR>Возраст:
+<BR><INPUT TYPE="text" ID="age">
+
+<BR>Город:
+<BR><INPUT TYPE="text" ID="city">
+
+<BR>Увлечения:
+
+<BR><INPUT TYPE="checkbox" ID="hobby1">
+Создавать БД
+
+<BR><INPUT TYPE="checkbox" ID="hobby2">
+Тонироваться
+
+<BR><INPUT TYPE="checkbox" ID="hobby3">
+Ездить в пгт Чукрышкино
+
+<BR><BR>
+
+<INPUT TYPE="button" VALUE="Показать анкету"
+ONCLICK="showForm();">
+
+
+<BR><BR>
+
+<H2>Результат</H2>
+
+<DIV ID="result"></DIV>
+
 
 </FORM>
 
 </BODY>
+
 </HTML>
+
