@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Работа профессионала</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 60px;
+            height: 25px;
+        }
+
+        .c { background: #00e6c7; }
+        .w { background: #ffffcc; }
+        .r { background: red; }
+        .b { background: blue; }
+        .g { background: lime; }
+        .y { background: yellow; }
+    </style>
+</head>
+
+<body>
+
+<h3>Таблица 1</h3>
+
+<table>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+
+<h3>Таблица 2</h3>
+
+<table>
+    <tr><td colspan="5"></td></tr>
+
+    <tr>
+        <td rowspan="3"></td>
+        <td></td>
+        <td rowspan="3"></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td rowspan="3"></td>
+        <td rowspan="3"></td>
+        <td></td>
+    </tr>
+
+    <tr><td></td></tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+
+<h3>Таблица 3</h3>
+
+<table class="table3">
+
+    <tr>
+        <td colspan="8"></td>
+    </tr>
+
+    <tr>
+        <td rowspan="6"></td>
+        <td colspan="6"></td>
+        <td rowspan="7"></td>
+    </tr>
+
+    <tr>
+        <td rowspan="4"></td>
+        <td colspan="4"></td>
+        <td rowspan="5"></td>
+    </tr>
+
+    <tr>
+        <td rowspan="2"></td>
+        <td colspan="2"></td>
+        <td rowspan="3"></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td colspan="4"></td>
+    </tr>
+
+    <tr>
+        <td colspan="6"></td>
+    </tr>
+
+    <tr>
+        <td colspan="8"></td>
+    </tr>
+
+</table>
+
+
+<h3>Таблица 4</h3>
+
+<table style="width:350px;height:350px;table-layout:fixed">
+
+    <tr><td colspan="8" class="c"></td></tr>
+
+    <tr>
+        <td rowspan="6" class="w"></td>
+        <td colspan="6" class="c"></td>
+        <td rowspan="6" class="w"></td>
+    </tr>
+
+    <tr>
+        <td rowspan="4" class="w"></td>
+        <td colspan="4" class="c"></td>
+        <td rowspan="4" class="w"></td>
+    </tr>
+
+    <tr>
+        <td rowspan="2" class="w"></td>
+        <td class="r"></td>
+        <td class="b"></td>
+        <td rowspan="2" class="w"></td>
+    </tr>
+
+    <tr>
+        <td class="g"></td>
+        <td class="y"></td>
+    </tr>
+
+    <tr><td colspan="4" class="c"></td></tr>
+
+    <tr><td colspan="6" class="c"></td></tr>
+
+    <tr><td colspan="8" class="c"></td></tr>
+
+</table>
+
+</body>
+</html>
