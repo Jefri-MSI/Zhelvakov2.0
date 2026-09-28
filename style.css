@@ -1,0 +1,17 @@
+div {
+    text-align: right;
+    background: lightgreen;
+    font-size: 20px;
+}
+
+div.my_menu {
+    text-align: left;
+    width: 180px;
+    background: #fff0cc;
+    float: left;
+}
+
+body {
+    text-align: justify;
+    color: white;
+}
