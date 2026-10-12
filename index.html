@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css">
     <title>Моя домашняя страница</title>
+	
+<script type="text/javascript">
+var arr = ["Ivanov", "Petrov", "Sidorov", "Korablev", "Sedov"];
+var counter = 0;
+
+function add_to_list()
+{
+    if (typeof(arr[counter]) != "undefined")
+    {
+        var list = document.getElementById("list");
+        var li = document.createElement("LI");
+        li.innerHTML = arr[counter];
+        list.appendChild(li);
+        counter++;
+    }
+}
+</script>
+
 </head>
 
 <body>
