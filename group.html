@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Список группы</title>
+
+    <script type="text/javascript">
+        var arr = ["Novoselov", "Pentin", "Mahnev", "Ageev", "Sedov"];
+        var counter = 0;
+
+        function add_to_list()
+        {
+            if (typeof(arr[counter]) != "undefined")
+            {
+                var list = document.getElementById("list");
+                var li = document.createElement("LI");
+                li.innerHTML = arr[counter];
+                list.appendChild(li);
+                counter++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Список группы</h1>
+
+    <ol id="list">
+    </ol>
+
+    <p onclick="add_to_list()">Добавить в список</p>
+
+    <p><a href="index.html">На главную</a></p>
+</body>
+</html>
