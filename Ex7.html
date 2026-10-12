@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex7 - Массивы</title>
+<script type="text/javascript">
+function showSubjects() {
+    var arr = ["Математика", "Физика", "Информатика", "Химия", "Биология", "Русский язык", "Литература", "История", "Обществознание", "Английский язык"];
+    var exact = arr.slice(0, 5);
+    var human = arr.slice(5, 10);
+    document.write("<h2>Точные науки</h2>");
+    document.write(exact.join(", ") + "<br>");
+    document.write("<h2>Гуманитарные науки</h2>");
+    document.write(human.join(", ") + "<br>");
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+showSubjects();
+</script>
+<p><a href="index.html">На главную</a></p>
+</body>
+</html>
