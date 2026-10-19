@@ -7,5 +7,6 @@ document.write(
     '<a href="Ex5.html">Ex5 - Линии</a><br>' +
     '<a href="Ex6.html">Ex6 - Степени двойки</a><br>' +
     '<a href="Ex7.html">Ex7 - Массивы</a><br>' +
-    '<a href="Ex8.html">Ex8 - Браузер</a><br>'
+    '<a href="Ex8.html">Ex8 - Браузер</a><br>' +
+    '<a href="video.html">Видео и музыка</a><br>'
 );
