@@ -9,5 +9,6 @@ document.write(
     '<a href="Ex7.html">Ex7 - Массивы</a><br>' +
     '<a href="Ex8.html">Ex8 - Браузер</a><br>' +
     '<a href="video.html">Видео и музыка</a><br>' + 
-    '<a href="Ex15.html">Практическая 15</a><br>'
+    '<a href="Ex15.html">Практическая 15</a><br>' +
+    '<a href="cars.html">Педовский автопром</a><br>'
 );
