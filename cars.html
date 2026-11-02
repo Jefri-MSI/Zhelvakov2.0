@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Автомобили — выбор и увеличение</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+        }
+        .bas {
+            position: relative;
+            width: 1000px;
+            margin: 20px auto;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        /* === Стили для блока 1 (наведение) === */
+        .im1 {
+            width: 300px;
+            border: 1px solid #000000;
+            margin: 10px;
+            vertical-align: top;
+        }
+        /* === Стили для блока 2 (клик) === */
+        .bas2 {
+            position: relative;
+            width: 1000px;
+            height: 450px;
+            margin: 20px auto;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .im2 {
+            position: absolute;
+            width: 300px;
+            border: 1px solid #000000;
+            z-index: 1;
+            cursor: pointer;
+        }
+        #c1 { left: 10px; top: 10px; }
+        #c2 { left: 322px; top: 10px; }
+        #c3 { left: 634px; top: 10px; }
+        #c4 { left: 10px; top: 200px; }
+        #c5 { left: 322px; top: 200px; }
+        #c6 { left: 634px; top: 200px; }
+
+        .hint {
+            text-align: center;
+            color: #555;
+            margin: 10px 0 5px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<div id="menu"></div>
+<script src="menu.js"></script>
+
+<main>
+    <h1>Работа с изображениями автомобилей</h1>
+
+    <!-- ==================== БЛОК 1: НАВЕДЕНИЕ (k1) ==================== -->
+    <h2>1. Выбор картинки (наведение мыши)</h2>
+    <p class="hint">Наведите указатель мыши на любой автомобиль — остальные плавно «растворятся». Уберите мышь — всё вернётся.</p>
+
+    <div class="bas" id="block1">
+        <img src="car1.jpg" id="i1" class="im1" alt="Автомобиль 1">
+        <img src="car2.jpg" id="i2" class="im1" alt="Автомобиль 2">
+        <img src="car3.jpg" id="i3" class="im1" alt="Автомобиль 3">
+        <img src="car4.jpg" id="i4" class="im1" alt="Автомобиль 4">
+        <img src="car5.jpg" id="i5" class="im1" alt="Автомобиль 5">
+        <img src="car6.jpg" id="i6" class="im1" alt="Автомобиль 6">
+    </div>
+
+    <!-- ==================== БЛОК 2: КЛИК (k2) ==================== -->
+    <h2>2. Увеличение рисунка (клик)</h2>
+    <p class="hint">Кликните по любому автомобилю — он увеличится и переместится в центр, остальные исчезнут.<br>
+    Повторный клик по увеличенной картинке вернёт всё на место.</p>
+
+    <div class="bas2" id="block2">
+        <img src="car1.jpg" id="c1" class="im2" alt="Автомобиль 1">
+        <img src="car2.jpg" id="c2" class="im2" alt="Автомобиль 2">
+        <img src="car3.jpg" id="c3" class="im2" alt="Автомобиль 3">
+        <img src="car4.jpg" id="c4" class="im2" alt="Автомобиль 4">
+        <img src="car5.jpg" id="c5" class="im2" alt="Автомобиль 5">
+        <img src="car6.jpg" id="c6" class="im2" alt="Автомобиль 6">
+    </div>
+
+    
+</main>
+
+<script>
+/* ========== Сценарий 1: mouseover (как в k1.html) ========== */
+document.getElementById("block1").addEventListener("mouseover", (ev) => {
+    let e = ev.target;
+    if (e.tagName == "IMG") {
+        for (let i = 1; i < 7; i++) {
+            let b = "i" + i;
+            if (e.id != b) {
+                let t = document.getElementById(b).style;
+                t.transition = "opacity 1s";
+                t.opacity = 0.1;
+            }
+        }
+    }
+});
+
+document.getElementById("block1").addEventListener("mouseout", (ev) => {
+    // Когда мышь уходит с блока — восстанавливаем все
+    let related = ev.relatedTarget;
+    if (!related || !document.getElementById("block1").contains(related)) {
+        for (let i = 1; i < 7; i++) {
+            let b = "i" + i;
+            let t = document.getElementById(b).style;
+            t.transition = "opacity 2s";
+            t.opacity = 1;
+        }
+    }
+});
+
+/* ========== Сценарий 2: click (как в k2.html) ========== */
+let y = 1;
+let w = 0;
+let h = 0;
+
+document.getElementById("block2").addEventListener("click", (ev) => {
+    let e = ev.target;
+    if (e.tagName == "IMG") {
+        let t = document.getElementById(e.id).style;
+
+        if (y == 1) {
+            // Первый клик — увеличиваем
+            let d = document.getElementById(e.id);
+            w = d.offsetLeft;
+            h = d.offsetTop;
+            y = 2;
+
+            // Остальные растворяются
+            for (let i = 1; i < 7; i++) {
+                let b = "c" + i;
+                if (e.id != b) {
+                    let p = document.getElementById(b).style;
+                    p.transition = "opacity 1s";
+                    p.opacity = 0;
+                }
+            }
+
+            // Выделенный увеличивается и едет в центр
+            t.zIndex = 2;
+            t.transition = "width 1s, left 1s, top 1s";
+            t.width = "600px";
+            t.left = "200px";
+            t.top = "100px";
+        } else {
+            // Второй клик — возвращаем
+            y = 1;
+
+            // Остальные появляются
+            for (let i = 1; i < 7; i++) {
+                let b = "c" + i;
+                let p = document.getElementById(b).style;
+                p.transition = "opacity 2s";
+                p.opacity = 1;
+            }
+
+            // Уменьшаем и возвращаем на место
+            t.transition = "width 1s, left 1s, top 1s";
+            t.width = "300px";
+            t.left = w + "px";
+            t.top = h + "px";
+            t.zIndex = 1;
+        }
+    }
+});
+</script>
+
+</body>
+</html>
