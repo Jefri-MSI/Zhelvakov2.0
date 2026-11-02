@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex15 — Форма с проверкой данных — Иван Новосёлов</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-row {
+            margin-bottom: 12px;
+        }
+        label {
+            display: inline-block;
+            width: 180px;
+            vertical-align: top;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea {
+            width: 220px;
+            padding: 4px;
+        }
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+        .buttons {
+            margin-top: 15px;
+            margin-left: 180px;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #333;
+        }
+        .error {
+            color: red;
+            margin-left: 180px;
+            margin-top: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="menu"></div>
+<script src="menu.js"></script>
+
+<main>
+    <h1>Задание 6. Форма заполнения данных</h1>
+
+    <form name="dataForm" onsubmit="return checkForm();">
+        <div class="form-row">
+            <label for="username">Ваше имя*</label>
+            <input type="text" id="username" name="username">
+        </div>
+
+        <div class="form-row">
+            <label for="password">Пароль*</label>
+            <input type="password" id="password" name="password">
+        </div>
+
+        <div class="form-row">
+            <label for="password2">Подтверждение пароля*</label>
+            <input type="password" id="password2" name="password2">
+        </div>
+
+        <div class="form-row">
+            <label for="email">Электронный адрес: *</label>
+            <input type="text" id="email" name="email">
+        </div>
+
+        <div class="form-row">
+            <label for="subject">Тема сообщения</label>
+            <input type="text" id="subject" name="subject">
+        </div>
+
+        <div class="form-row">
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message"></textarea>
+        </div>
+
+        <div class="buttons">
+            <input type="submit" value="Отправить">
+            <input type="reset" value="Очистить">
+        </div>
+    </form>
+
+
+    
+</main>
+
+<script>
+function checkForm() {
+    var password = document.getElementById("password");
+    var password2 = document.getElementById("password2");
+    var email = document.getElementById("email");
+    var message = document.getElementById("message");
+
+    // 1. Пароль введён и длина > 4
+    if (password.value.length <= 4) {
+        alert("Пароль должен быть введён и содержать больше 4 символов!");
+        password.focus();
+        return false;
+    }
+
+    // 2. Пароли совпадают
+    if (password.value !== password2.value) {
+        alert("Пароли не совпадают!");
+        password2.focus();
+        return false;
+    }
+
+    // 3. Электронный адрес заполнен и содержит @
+    if (email.value === "" || email.value.indexOf("@") === -1) {
+        alert("Электронный адрес должен быть заполнен и содержать символ @!");
+        email.focus();
+        return false;
+    }
+
+    // 4. Сообщение заполнено и длина > 10
+    if (message.value.length <= 10) {
+        alert("Сообщение должно быть заполнено и содержать больше 10 символов!");
+        message.focus();
+        return false;
+    }
+
+    // Всё в порядке
+    alert("Данные успешно проверены и готовы к отправке!");
+    return true;
+}
+</script>
+
+</body>
+</html>
