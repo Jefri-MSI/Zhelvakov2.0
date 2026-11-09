@@ -10,5 +10,6 @@ document.write(
     '<a href="Ex8.html">Ex8 - Браузер</a><br>' +
     '<a href="video.html">Видео и музыка</a><br>' + 
     '<a href="Ex15.html">Практическая 15</a><br>' +
-    '<a href="cars.html">Педовский автопром</a><br>'
+    '<a href="cars.html">Педовский автопром</a><br>' +
+    '<a href="cubic.html">09//11</a><br>'
 );
