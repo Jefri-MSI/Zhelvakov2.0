@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table { border-collapse: collapse; margin: 20px; }
+        td { width: 30px; height: 30px; border: 5px solid #fff; }
+    </style>
+</head>
+<body>
+</head>
+<body>
+<script>
+    let html = '<table>';
+    for (let i = 0; i < 11; i++) {
+        html += '<tr>';
+        for (let j = 0; j < 11; j++) {
+            let color = (i + j >= 10) ? '#000080' : '#00d2ff';
+            html += `<td style="background:${color}"></td>`;
+        }
+        html += '</tr>';
+    }
+    html += '</table>';
+    document.body.innerHTML = html;
+</script>
+</body>
+</html>
