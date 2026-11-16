@@ -5,32 +5,53 @@
     <meta charset="UTF-8">
     <title>Список группы</title>
 
-    <script type="text/javascript">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+
         var arr = ["Novoselov", "Pentin", "Mahnev", "Ageev", "Sedov"];
         var counter = 0;
 
         function add_to_list()
         {
-            if (typeof(arr[counter]) != "undefined")
+            if (counter < arr.length)
             {
                 var list = document.getElementById("list");
-                var li = document.createElement("LI");
+                var li = document.createElement("li");
+
                 li.innerHTML = arr[counter];
+
                 list.appendChild(li);
+
                 counter++;
             }
         }
+
+        function reset_list()
+        {
+            document.getElementById("list").innerHTML = "";
+            counter = 0;
+        }
+
     </script>
 </head>
 
 <body>
+
+    <div class="my_menu">
+        <script src="menu.js"></script>
+    </div>
+
     <h1>Список группы</h1>
 
     <ol id="list">
     </ol>
 
-    <p onclick="add_to_list()">Добавить в список</p>
+    <button onclick="add_to_list()">Добавить в список</button>
+
+    <button onclick="reset_list()">Сбросить список</button>
 
     <p><a href="index.html">На главную</a></p>
+
 </body>
 </html>
