@@ -1,14 +1,11 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список группы</title>
-
     <link rel="stylesheet" href="style.css">
-
     <script>
-
         var arr = ["Novoselov", "Pentin", "Mahnev", "Ageev", "Sedov"];
         var counter = 0;
 
@@ -18,11 +15,8 @@
             {
                 var list = document.getElementById("list");
                 var li = document.createElement("li");
-
                 li.innerHTML = arr[counter];
-
                 list.appendChild(li);
-
                 counter++;
             }
         }
@@ -32,26 +26,19 @@
             document.getElementById("list").innerHTML = "";
             counter = 0;
         }
-
     </script>
 </head>
-
 <body>
+<div class="my_menu">
+    <script src="menu.js"></script>
+</div>
 
-    <div class="my_menu">
-        <script src="menu.js"></script>
-    </div>
+<h1>Список группы</h1>
 
-    <h1>Список группы</h1>
+<ol id="list"></ol>
 
-    <ol id="list">
-    </ol>
-
-    <button onclick="add_to_list()">Добавить в список</button>
-
-    <button onclick="reset_list()">Сбросить список</button>
-
-    <p><a href="index.html">На главную</a></p>
+<button type="button" onclick="add_to_list()">Добавить в список</button>
+<button type="button" onclick="reset_list()">Сбросить список</button>
 
 </body>
 </html>

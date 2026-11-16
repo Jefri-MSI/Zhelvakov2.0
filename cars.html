@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Автомобили — выбор и увеличение</title>
     <link rel="stylesheet" href="style.css">
@@ -9,7 +10,7 @@
             margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
-            background: white;
+            background: #f2f7f2;
         }
         h2 {
             margin-top: 40px;
@@ -18,7 +19,8 @@
         }
         .bas {
             position: relative;
-            width: 1000px;
+            width: 100%;
+            max-width: 1000px;
             margin: 20px auto;
             background: #f9f9f9;
             padding: 10px;
@@ -34,7 +36,8 @@
         /* === Стили для блока 2 (клик) === */
         .bas2 {
             position: relative;
-            width: 1000px;
+            width: 100%;
+            max-width: 1000px;
             height: 450px;
             margin: 20px auto;
             background: #f9f9f9;
@@ -63,8 +66,11 @@
     </style>
 </head>
 <body>
-<div id="menu"></div>
-<script src="menu.js"></script>
+<div class="my_menu">
+    <script src="menu.js"></script>
+</div>
+
+
 
 <main>
     <h1>Работа с изображениями автомобилей</h1>
