@@ -1,0 +1,52 @@
+.traffic-page,
+body {
+    text-align: center;
+}
+
+.simple-text {
+    text-align: center;
+}
+
+.traffic-light {
+    width: 100px;
+    padding: 8px;
+    margin: 20px auto;
+    background: black;
+    border: 3px solid black;
+}
+
+.lamp {
+    width: 65px;
+    height: 65px;
+    margin: 8px auto;
+    background: #555;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.red.on {
+    background: red;
+}
+
+.yellow.on {
+    background: yellow;
+}
+
+.green.on {
+    background: lime;
+}
+
+.traffic-controls {
+    text-align: center;
+}
+
+.traffic-controls button {
+    margin: 5px;
+    padding: 8px;
+}
+
+#signalStatus,
+#timerText {
+    text-align: center;
+    font-weight: bold;
+}
