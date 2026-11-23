@@ -1,4 +1,4 @@
-.traffic-page,
+
 body {
     text-align: center;
 }
@@ -36,22 +36,7 @@ body {
     background: lime;
 }
 
-.traffic-controls {
-    text-align: center;
-}
-
-.traffic-controls button {
-    margin: 5px;
-    padding: 8px;
-}
-
-
-#signalStatus,
-#timerText {
-    text-align: center;
-    font-weight: bold;
-}
-
+/* Мигание зелёного */
 .green.blink {
     animation: blinkGreen 1s infinite;
 }
@@ -66,3 +51,17 @@ body {
     }
 }
 
+.traffic-controls {
+    text-align: center;
+}
+
+.traffic-controls button {
+    margin: 5px;
+    padding: 8px;
+}
+
+#signalStatus,
+#timerText {
+    text-align: center;
+    font-weight: bold;
+}
