@@ -1,3 +1,4 @@
+
 var redLamp = document.getElementById("redLamp");
 var yellowLamp = document.getElementById("yellowLamp");
 var greenLamp = document.getElementById("greenLamp");
@@ -36,6 +37,13 @@ function showLight() {
         statusText.textContent = "Жёлтый — приготовься!";
     }
 
+
+    if (color == 2 && seconds <= 3 && paused == false) {
+        greenLamp.classList.add("blink");
+    } else {
+        greenLamp.classList.remove("blink");
+    }
+
     timerText.textContent = "Осталось " + seconds + " секунд";
 }
 
@@ -58,6 +66,7 @@ pauseButton.onclick = function () {
 
     if (paused == true) {
         pauseButton.textContent = "Продолжить";
+        greenLamp.classList.remove("blink");
         timerText.textContent = "Пауза";
     } else {
         pauseButton.textContent = "Пауза";
