@@ -15,5 +15,7 @@ document.write(
     '<a href="video.html">Видео и музыка</a>' +
     '<a href="Ex1.html">Ex1</a>' +
     '<a href="Ex3.html">Ex3</a>' +
-    '<a href="16.11.html">16/11</a>'
+    '<a href="16.11.html">16/11</a>' +
+    '<a href="svetofor-manual.html">23/11</a>' +
+    '<a href="svetofor-auto.html">23/11 автоматический</a>'
 );
